@@ -1086,11 +1086,11 @@ contract Treasury is ContractGuard {
         uint256 _bondFundSharedPercent
     ) external onlyOperator {
         require(_daoFund != address(0), "zero");
-        require(_daoFundSharedPercent <= 800, "out of range"); // <= 8%
+        require(_daoFundSharedPercent <= 800, "out of range"); // <= 5%
         require(_devFund != address(0), "zero");
         require(_devFundSharedPercent <= 200, "out of range"); // <= 2%
         require(_bondFund != address(0), "zero");
-        require(_bondFundSharedPercent <= 500, "out of range"); // <= 5%
+        require(_bondFundSharedPercent <= 500, "out of range"); // <= 3%
         daoFund = _daoFund;
         daoFundSharedPercent = _daoFundSharedPercent;
         devFund = _devFund;
