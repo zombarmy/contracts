@@ -1,7 +1,3 @@
-/**
- *Submitted for verification at FtmScan.com on 2022-02-18
-*/
-
 // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.6.0 <0.8.0;
