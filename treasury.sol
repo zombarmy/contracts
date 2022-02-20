@@ -1090,7 +1090,7 @@ contract Treasury is ContractGuard {
         require(_devFund != address(0), "zero");
         require(_devFundSharedPercent <= 200, "out of range"); // <= 2%
         require(_bondFund != address(0), "zero");
-        require(_bondFundSharedPercent <= 500, "out of range"); // <= 3%
+        require(_bondFundSharedPercent <= 300, "out of range"); // <= 3%
         daoFund = _daoFund;
         daoFundSharedPercent = _daoFundSharedPercent;
         devFund = _devFund;
@@ -1209,7 +1209,7 @@ contract Treasury is ContractGuard {
         uint256 _bondFundSharedAmount = 0;
         if (bondFundSharedPercent > 0) {
             _bondFundSharedAmount = _amount.mul(bondFundSharedPercent).div(10000);
-            IERC20(based).transfer(teamFund, _bondFundSharedAmount);
+            IERC20(tomb).transfer(bondFund, _bondFundSharedAmount);
             emit BondFundFunded(block.timestamp, _bondFundSharedAmount);
         }
 
